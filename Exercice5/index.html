@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Page sans Accessibilité</title>
+    <title>Page Accessible</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1>Titre de la Page</h1>
+
+<h1 id="main-title">Titre de la Page</h1>
 <p>Ceci est un paragraphe de texte.</p>
 
-<!-- Formulaire sans étiquette pour les champs -->
-<form>
-    <input id="name" type="text" placeholder="Entrez votre nom">
-    <input id="email" type="email" placeholder="Entrez votre adresse e-mail">
+<!-- Formulaire avec étiquettes pour les champs -->
+<form aria-labelledby="form-title">
+    <h2 id="form-title">Formulaire de contact</h2>
+    <div>
+        <label for="name">Nom:</label>
+        <input id="name" type="text" placeholder="Entrez votre nom" required>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" placeholder="Entrez votre adresse e-mail" required>
+    </div>
     <button type="submit">Envoyer</button>
 </form>
 
-<!-- Image sans attribut alt -->
-<img src="assets/image.png" height=250>
+<!-- Image avec attribut alt -->
+<img src="assets/image.png" alt="Description de l'image" height="250">
 
-<!-- Lien sans texte descriptif -->
-<a href="#">Cliquez ici</a>
+<!-- Lien avec texte descriptif -->
+<a href="#main-title">Retour en haut de la page</a>
+
+<script src="./index.js"></script>
 </body>
 </html>
